@@ -2,7 +2,7 @@
 #include "parse.h"
 #include "runtime.h"
 #include "statement.h"
-#include "test_runner_p.h"
+#include "test_runner.h"
 
 #include <iostream>
 
