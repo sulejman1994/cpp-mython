@@ -133,14 +133,7 @@ namespace runtime {
         // Имена формальных параметров метода
         std::vector<std::string> formal_params;
         // Тело метода
-        std::shared_ptr<Executable> body;
-
-        Method() = default;
-
-        Method(std::string name, std::vector<std::string> formal_params, std::unique_ptr<Executable>&& body)
-            : name(name), formal_params(formal_params), body(std::move(body))
-        {
-        }
+        std::unique_ptr<Executable> body;
     };
 
     // Класс
@@ -195,7 +188,7 @@ namespace runtime {
         [[nodiscard]] const Closure& Fields() const;
 
     private:
-        Class class_;
+        const Class& class_;
         Closure fields_;
     };
 
